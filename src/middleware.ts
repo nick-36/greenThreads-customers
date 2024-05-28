@@ -1,29 +1,5 @@
-// import {authMiddleware, redirectToSignIn} from "@clerk/nextjs";
-// import {NextResponse} from "next/server";
-
-// export default authMiddleware({
-//   publicRoutes: ["/sign-in", "/sign-up", "/forgot-password"],
-//   afterAuth(auth, req) {
-//     // Handle users who aren't authenticated
-//     if (!auth.userId && !auth.isPublicRoute) {
-//       return redirectToSignIn({returnBackUrl: req.url});
-//     }
-
-//     // If the user is signed in and trying to access a protected route, allow them to access route
-//     if (auth.userId && !auth.isPublicRoute) {
-//       return NextResponse.next();
-//     }
-//     // Allow users visiting public routes to access them
-//     return NextResponse.next();
-//   },
-// });
-
-// export const config = {
-//   matcher: ["/((?!.+\\.[\\w]+$|_next).)", "/(api|trpc)(.)"],
-// };
-
-import {authMiddleware, redirectToSignIn} from "@clerk/nextjs";
-import {NextRequest, NextResponse} from "next/server";
+import { authMiddleware, redirectToSignIn } from "@clerk/nextjs";
+import { NextRequest, NextResponse } from "next/server";
 
 export default authMiddleware({
   publicRoutes: ["/", "/sign-in", "sign-up"],
@@ -58,7 +34,7 @@ function getSubdomain(req: NextRequest) {
 }
 
 function rewrites(req: NextRequest) {
-  const {nextUrl: url} = req;
+  const { nextUrl: url } = req;
   const path = url.pathname;
   const subdomain = getSubdomain(req);
   const hostname = req.headers.get("host") ?? req.nextUrl.host;
@@ -68,10 +44,10 @@ function rewrites(req: NextRequest) {
       new URL(`/app${path === "/" ? "" : path}`, req.url)
     );
   }
-  if (hostname === "localhost:3000") {
+  if (hostname === "localhost:3001") {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
   return NextResponse.rewrite(new URL(`/${hostname}${path}`, req.url));
 }
 
-export const config = {matcher: ["/((?!...|_next).)", "/", "/(api|trpc)(.)"]};
+export const config = { matcher: ["/((?!...|_next).)", "/", "/(api|trpc)(.)"] };
