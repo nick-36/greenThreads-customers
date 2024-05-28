@@ -39,8 +39,6 @@ function rewrites(req: NextRequest) {
   const subdomain = getSubdomain(req);
   const hostname = req.headers.get("host") ?? req.nextUrl.host;
 
-  console.log(hostname, url, "HOSTNAME");
-
   if (subdomain == "app") {
     return NextResponse.rewrite(
       new URL(`/app${path === "/" ? "" : path}`, req.url)
@@ -48,7 +46,7 @@ function rewrites(req: NextRequest) {
   }
   if (
     hostname === "localhost:3000" ||
-    url.origin === process.env.NEXT_PUBLIC_PROD_HOSTNAME
+    hostname === process.env.NEXT_PUBLIC_PROD_HOSTNAME
   ) {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
