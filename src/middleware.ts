@@ -39,7 +39,7 @@ function rewrites(req: NextRequest) {
   const subdomain = getSubdomain(req);
   const hostname = req.headers.get("host") ?? req.nextUrl.host;
 
-  console.log(hostname, req.headers, "HOSTNAME");
+  console.log(hostname, url, "HOSTNAME");
 
   if (subdomain == "app") {
     return NextResponse.rewrite(
@@ -48,7 +48,7 @@ function rewrites(req: NextRequest) {
   }
   if (
     hostname === "localhost:3000" ||
-    hostname === "green-threads-customers.vercel.app"
+    hostname === process.env.NEXT_PUBLIC_PROD_HOSTNAME
   ) {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
