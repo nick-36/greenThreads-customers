@@ -48,7 +48,7 @@ function rewrites(req: NextRequest) {
   }
   if (
     hostname === "localhost:3000" ||
-    hostname === process.env.NEXT_PUBLIC_PROD_HOSTNAME
+    url.origin === process.env.NEXT_PUBLIC_PROD_HOSTNAME
   ) {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
