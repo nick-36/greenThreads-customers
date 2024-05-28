@@ -44,7 +44,10 @@ function rewrites(req: NextRequest) {
       new URL(`/app${path === "/" ? "" : path}`, req.url)
     );
   }
-  if (hostname === "localhost:3001") {
+  if (
+    hostname === "localhost:3000" ||
+    url.origin === process.env.NEXT_PUBLIC_PROD_URL
+  ) {
     return NextResponse.rewrite(new URL(`${path}`, req.url));
   }
   return NextResponse.rewrite(new URL(`/${hostname}${path}`, req.url));
