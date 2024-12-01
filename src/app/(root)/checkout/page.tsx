@@ -31,7 +31,6 @@ interface CartSummary {
 
 const CheckoutPage = () => {
   const { userId } = useAuth();
-  const router = useRouter();
   const axiosPrivate = useAxiosPrivate();
   const [cartSummary, setCartSummary] = useState<CartSummary | null>(null);
   const [loading, setLoading] = useState(true);
