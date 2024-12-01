@@ -1,13 +1,13 @@
 "use client";
-import {Fragment, useState} from "react";
-import {Dialog, Popover, Tab, Transition} from "@headlessui/react";
+import { Fragment, useState } from "react";
+import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
   ShoppingBagIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export default function Example() {
   const [open, setOpen] = useState(false);
@@ -59,7 +59,7 @@ export default function Example() {
                       {navigation.categories.map((category) => (
                         <Tab
                           key={category.name}
-                          className={({selected}) =>
+                          className={({ selected }) =>
                             cn(
                               selected
                                 ? "border-indigo-600 text-indigo-600"
@@ -225,7 +225,7 @@ export default function Example() {
                 <div className="flex h-full space-x-8">
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
-                      {({open}) => (
+                      {({ open }) => (
                         <>
                           <div className="relative flex">
                             <Popover.Button
@@ -932,38 +932,38 @@ const navigation = {
           id: "clothing",
           name: "Clothing",
           items: [
-            {name: "Tops", href: "#"},
-            {name: "Dresses", href: "#"},
-            {name: "Pants", href: "#"},
-            {name: "Denim", href: "#"},
-            {name: "Sweaters", href: "#"},
-            {name: "T-Shirts", href: "#"},
-            {name: "Jackets", href: "#"},
-            {name: "Activewear", href: "#"},
-            {name: "Browse All", href: "#"},
+            { name: "Tops", href: "#" },
+            { name: "Dresses", href: "#" },
+            { name: "Pants", href: "#" },
+            { name: "Denim", href: "#" },
+            { name: "Sweaters", href: "#" },
+            { name: "T-Shirts", href: "#" },
+            { name: "Jackets", href: "#" },
+            { name: "Activewear", href: "#" },
+            { name: "Browse All", href: "#" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            {name: "Watches", href: "#"},
-            {name: "Wallets", href: "#"},
-            {name: "Bags", href: "#"},
-            {name: "Sunglasses", href: "#"},
-            {name: "Hats", href: "#"},
-            {name: "Belts", href: "#"},
+            { name: "Watches", href: "#" },
+            { name: "Wallets", href: "#" },
+            { name: "Bags", href: "#" },
+            { name: "Sunglasses", href: "#" },
+            { name: "Hats", href: "#" },
+            { name: "Belts", href: "#" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            {name: "Full Nelson", href: "#"},
-            {name: "My Way", href: "#"},
-            {name: "Re-Arranged", href: "#"},
-            {name: "Counterfeit", href: "#"},
-            {name: "Significant Other", href: "#"},
+            { name: "Full Nelson", href: "#" },
+            { name: "My Way", href: "#" },
+            { name: "Re-Arranged", href: "#" },
+            { name: "Counterfeit", href: "#" },
+            { name: "Significant Other", href: "#" },
           ],
         },
       ],
@@ -994,43 +994,44 @@ const navigation = {
           id: "clothing",
           name: "Clothing",
           items: [
-            {name: "Tops", href: "#"},
-            {name: "Pants", href: "#"},
-            {name: "Sweaters", href: "#"},
-            {name: "T-Shirts", href: "#"},
-            {name: "Jackets", href: "#"},
-            {name: "Activewear", href: "#"},
-            {name: "Browse All", href: "#"},
+            { name: "Tops", href: "#" },
+            { name: "Pants", href: "#" },
+            { name: "Sweaters", href: "#" },
+            { name: "T-Shirts", href: "#" },
+            { name: "Jackets", href: "#" },
+            { name: "Activewear", href: "#" },
+            { name: "Browse All", href: "#" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            {name: "Watches", href: "#"},
-            {name: "Wallets", href: "#"},
-            {name: "Bags", href: "#"},
-            {name: "Sunglasses", href: "#"},
-            {name: "Hats", href: "#"},
-            {name: "Belts", href: "#"},
+            { name: "Watches", href: "#" },
+            { name: "Wallets", href: "#" },
+            { name: "Bags", href: "#" },
+            { name: "Sunglasses", href: "#" },
+            { name: "Hats", href: "#" },
+            { name: "Belts", href: "#" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            {name: "Re-Arranged", href: "#"},
-            {name: "Counterfeit", href: "#"},
-            {name: "Full Nelson", href: "#"},
-            {name: "My Way", href: "#"},
+            { name: "Re-Arranged", href: "#" },
+            { name: "Counterfeit", href: "#" },
+            { name: "Full Nelson", href: "#" },
+            { name: "My Way", href: "#" },
           ],
         },
       ],
     },
   ],
   pages: [
-    {name: "Company", href: "#"},
-    {name: "Stores", href: "#"},
+    { name: "Company", href: "#" },
+    { name: "Stores", href: "" },
+    { name: "Products", href: "/products" },
   ],
 };
 const favorites = [
@@ -1065,29 +1066,29 @@ const favorites = [
 ];
 const footerNavigation = {
   shop: [
-    {name: "Bags", href: "#"},
-    {name: "Tees", href: "#"},
-    {name: "Objects", href: "#"},
-    {name: "Home Goods", href: "#"},
-    {name: "Accessories", href: "#"},
+    { name: "Bags", href: "#" },
+    { name: "Tees", href: "#" },
+    { name: "Objects", href: "#" },
+    { name: "Home Goods", href: "#" },
+    { name: "Accessories", href: "#" },
   ],
   company: [
-    {name: "Who we are", href: "#"},
-    {name: "Sustainability", href: "#"},
-    {name: "Press", href: "#"},
-    {name: "Careers", href: "#"},
-    {name: "Terms & Conditions", href: "#"},
-    {name: "Privacy", href: "#"},
+    { name: "Who we are", href: "#" },
+    { name: "Sustainability", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Careers", href: "#" },
+    { name: "Terms & Conditions", href: "#" },
+    { name: "Privacy", href: "#" },
   ],
   account: [
-    {name: "Manage Account", href: "#"},
-    {name: "Returns & Exchanges", href: "#"},
-    {name: "Redeem a Gift Card", href: "#"},
+    { name: "Manage Account", href: "#" },
+    { name: "Returns & Exchanges", href: "#" },
+    { name: "Redeem a Gift Card", href: "#" },
   ],
   connect: [
-    {name: "Contact Us", href: "#"},
-    {name: "Facebook", href: "#"},
-    {name: "Instagram", href: "#"},
-    {name: "Pinterest", href: "#"},
+    { name: "Contact Us", href: "#" },
+    { name: "Facebook", href: "#" },
+    { name: "Instagram", href: "#" },
+    { name: "Pinterest", href: "#" },
   ],
 };
