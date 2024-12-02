@@ -22,7 +22,7 @@ const ProductsPage = () => {
   const axiosPrivate = useAxiosPrivate();
 
   const fetchProducts = async () => {
-    const { data } = await axiosPrivate.get("/api/v1/products");
+    const { data } = await axiosPrivate.get("/api/v1/products/all");
     return data;
   };
 
